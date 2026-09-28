@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class democlass extends StatefulWidget{
   @override
@@ -15,7 +16,7 @@ class democlassstate extends State<democlass>{
     return Container(
       child: Column(
         children: [
-          NavigationToolbar(
+          AppBar(
             middle: Text("This is a navbar"),
           ),
           Text("This is a demo class"),
