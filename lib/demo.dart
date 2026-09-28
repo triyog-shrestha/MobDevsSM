@@ -13,7 +13,14 @@ class democlassstate extends State<democlass>{
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text("Welcome to Demo ")
+      child: Column(
+        children: [
+          NavigationToolbar(
+            middle: Text("This is a navbar"),
+          ),
+          Text("This is a demo class"),
+        ],
+      )
     );
 
   }
