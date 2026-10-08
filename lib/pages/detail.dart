@@ -73,17 +73,17 @@ class _DetailState extends State<Detail> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Bron and his seed looking at his banner in unison", style: TextStyle(fontSize: 22),),
+                Text("BRON AND HIS SEED LOOKING AT THE SKY IN UNISON", style: TextStyle(fontSize: 18),),
                 SizedBox(height: 5),
                 Row(
                   children: [
-                    Text("LeBron James", style: TextStyle(fontSize: 10),),
+                    Text("Triyog Shrestha", style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),),
                     SizedBox(width: 160,),
-                    Text("Feb 6, 2023", style: TextStyle(fontSize: 10),),
+                    Text("Feb 6, 2023", style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),),
                   ],
                 ),
-                SizedBox(height: 20,),
-                Text("Bron and his seed looking at his banner in unison", style: TextStyle(fontSize: 22),),
+                SizedBox(height: 15,),
+                Text("LeBron James surpassed Kareem Abdul-Jabbar for the NBA's all-time regular-season scoring record on February 7, 2023, by scoring 38 points against the Oklahoma City Thunder to reach 38,390 career points.  He also became the all-time leader in total points (regular season plus playoffs) by passing Abdul-Jabbar’s combined total of 44,149 in December 2025, finishing with 44,150 points in that milestone game.", style: TextStyle(fontSize: 12), textAlign: TextAlign.justify,),
 
 
               ],

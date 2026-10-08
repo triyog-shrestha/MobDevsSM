@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'detail.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -14,7 +15,7 @@ class _DashboardState extends State<Dashboard> {
     return GestureDetector(
       onTap: (){
         Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (context) => Dashboard(),
+          MaterialPageRoute<void>(builder: (context) => Detail(),
           ),
         );
       },
