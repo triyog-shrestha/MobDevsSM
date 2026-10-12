@@ -5,17 +5,17 @@ class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
 
   @override
-  State<Dashboard> createState() => _DashboardState();
+  State<Dashboard> createState() => DashboardState();
 }
 
+class DashboardState extends State<Dashboard> {
 
-class _DashboardState extends State<Dashboard> {
-
-  horizonatlistcard(size, String img, String title, String date){
+  Widget horizontalListCard(Size size, String img, String title, String date) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         Navigator.of(context).push(
-          MaterialPageRoute<void>(builder: (context) => Detail(),
+          MaterialPageRoute<void>(
+            builder: (context) => const Detail(),
           ),
         );
       },
@@ -62,7 +62,7 @@ class _DashboardState extends State<Dashboard> {
               width: size.width / 2.5,
               child: Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 15,
@@ -79,7 +79,7 @@ class _DashboardState extends State<Dashboard> {
               width: size.width / 1.5,
               child: Text(
                 date,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.white,
                   fontSize: 11,
                 ),
@@ -100,9 +100,9 @@ class _DashboardState extends State<Dashboard> {
         ],
       ),
     );
-
   }
-  verticallistcard(size, String img, String title, String btntxt, String date){
+
+   Widget verticalListCard(Size size, String img, String title, String btntxt, String date) {
     return Row(
       children: [
         Row(
@@ -117,19 +117,28 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   height: 100,
                   width: 100,
-                  child: ClipRRect(borderRadius: BorderRadiusGeometry.circular(20), child: Image.network(fit: BoxFit.cover, img)),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.network(img, fit: BoxFit.cover),
+                  ),
                 ),
-                Positioned(top:40, right:35 ,child: Icon(Icons.play_circle_fill, color: Colors.white, size: 30, )),
+                const Positioned(
+                  top: 45,
+                  right: 45,
+                  child: Icon(Icons.play_circle_fill, color: Colors.white, size: 30),
+                ),
               ],
             ),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
                   width: size.width / 1.55,
                   child: Text(
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.black,
+                      fontWeight: FontWeight.bold,
                       fontSize: 13,
                     ),
                     maxLines: 2,
@@ -138,7 +147,6 @@ class _DashboardState extends State<Dashboard> {
                 ),
                 Row(
                   children: [
-                    const SizedBox(height: 8),
                     FilledButton(
                       onPressed: () {},
                       style: FilledButton.styleFrom(
@@ -147,25 +155,19 @@ class _DashboardState extends State<Dashboard> {
                           borderRadius: BorderRadius.circular(5),
                         ),
                       ),
-                      child: Text(btntxt, style: TextStyle(fontSize: 10)),
+                      child: Text(btntxt, style: const TextStyle(fontSize: 10)),
                     ),
-
-                    SizedBox(width: 50,),
-
-                    Text(date, style: TextStyle(fontSize: 12),),
+                    const SizedBox(width: 50),
+                    Text(date, style: const TextStyle(fontSize: 12)),
                   ],
                 ),
               ],
             )
-
           ],
         ),
       ],
     );
-
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -178,76 +180,55 @@ class _DashboardState extends State<Dashboard> {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                horizonatlistcard(size,
-                    "https://imgs.search.brave.com/tu80peDDYz46QJ-k5hQt-xJBiKLPdXDaWtkdTw-6rH8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/ZnJvbnQuZnJlZXBp/ay5jb20vaG9tZS9h/bm9uLXJ2bXAvY3Jl/YXRpdmUtc3VpdGUv/YXVkaW8tY3JlYXRp/b24vdmlzdWFscy1z/b25ncy53ZWJw",
+                horizontalListCard(size,
+                    "https://picsum.photos/500",
                     "Digital Wallet Are The Killer App for Drizzy",
                     "June 6, 2008"
                 ),
-                horizonatlistcard(size,
-                    "https://imgs.search.brave.com/tu80peDDYz46QJ-k5hQt-xJBiKLPdXDaWtkdTw-6rH8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/ZnJvbnQuZnJlZXBp/ay5jb20vaG9tZS9h/bm9uLXJ2bXAvY3Jl/YXRpdmUtc3VpdGUv/YXVkaW8tY3JlYXRp/b24vdmlzdWFscy1z/b25ncy53ZWJw",
-                    "Digital Wallet Are The Killer App for Drizzy",
-                    "June 6, 2008"
-                ),horizonatlistcard(size,
-                    "https://imgs.search.brave.com/tu80peDDYz46QJ-k5hQt-xJBiKLPdXDaWtkdTw-6rH8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/ZnJvbnQuZnJlZXBp/ay5jb20vaG9tZS9h/bm9uLXJ2bXAvY3Jl/YXRpdmUtc3VpdGUv/YXVkaW8tY3JlYXRp/b24vdmlzdWFscy1z/b25ncy53ZWJw",
-                    "Digital Wallet Are The Killer App for Drizzy",
-                    "June 6, 2008"
-                ),horizonatlistcard(size,
-                    "https://imgs.search.brave.com/tu80peDDYz46QJ-k5hQt-xJBiKLPdXDaWtkdTw-6rH8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/ZnJvbnQuZnJlZXBp/ay5jb20vaG9tZS9h/bm9uLXJ2bXAvY3Jl/YXRpdmUtc3VpdGUv/YXVkaW8tY3JlYXRp/b24vdmlzdWFscy1z/b25ncy53ZWJw",
-                    "Digital Wallet Are The Killer App for Drizzy",
-                    "June 6, 2008"
-                ),horizonatlistcard(size,
-                    "https://imgs.search.brave.com/tu80peDDYz46QJ-k5hQt-xJBiKLPdXDaWtkdTw-6rH8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/ZnJvbnQuZnJlZXBp/ay5jb20vaG9tZS9h/bm9uLXJ2bXAvY3Jl/YXRpdmUtc3VpdGUv/YXVkaW8tY3JlYXRp/b24vdmlzdWFscy1z/b25ncy53ZWJw",
+                horizontalListCard(size,
+                    "https://picsum.photos/500",
                     "Digital Wallet Are The Killer App for Drizzy",
                     "June 6, 2008"
                 ),
-
-
               ],
             ),
           ),
-
-          Container(
-            height: size.height/1.75,
+          Expanded(
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  verticallistcard(
+                  verticalListCard(
                       size,
-                      "https://imgs.search.brave.com/GO8ZB_gMZoE28uWTwsOjitIQ-cvL5jrv1h_8nqpyG_g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/ZnJvbnQuZnJlZXBp/ay5jb20vaG9tZS9h/bm9uLXJ2bXAvY3Jl/YXRpdmUtc3VpdGUv/c29jaWFsLW1lZGlh/L29uLWJyYW5kLndl/YnA",
+                      "https://picsum.photos/500",
                       "Hello PCPS news channel happy dashain ggshfg",
                       "BBC News",
                       "02, Feb, 2026"
                   ),
-                  verticallistcard(
+                  verticalListCard(
                       size,
-                      "https://imgs.search.brave.com/GO8ZB_gMZoE28uWTwsOjitIQ-cvL5jrv1h_8nqpyG_g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/ZnJvbnQuZnJlZXBp/ay5jb20vaG9tZS9h/bm9uLXJ2bXAvY3Jl/YXRpdmUtc3VpdGUv/c29jaWFsLW1lZGlh/L29uLWJyYW5kLndl/YnA",
+                      "https://picsum.photos/500",
                       "Hello PCPS news channel happy dashain ggshfg",
                       "BBC News",
                       "02, Feb, 2026"
-                  ),verticallistcard(
+                  ),verticalListCard(
                       size,
-                      "https://imgs.search.brave.com/GO8ZB_gMZoE28uWTwsOjitIQ-cvL5jrv1h_8nqpyG_g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/ZnJvbnQuZnJlZXBp/ay5jb20vaG9tZS9h/bm9uLXJ2bXAvY3Jl/YXRpdmUtc3VpdGUv/c29jaWFsLW1lZGlh/L29uLWJyYW5kLndl/YnA",
+                      "https://picsum.photos/500",
                       "Hello PCPS news channel happy dashain ggshfg",
                       "BBC News",
                       "02, Feb, 2026"
-                  ),verticallistcard(
+                  ),verticalListCard(
                       size,
-                      "https://imgs.search.brave.com/GO8ZB_gMZoE28uWTwsOjitIQ-cvL5jrv1h_8nqpyG_g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/ZnJvbnQuZnJlZXBp/ay5jb20vaG9tZS9h/bm9uLXJ2bXAvY3Jl/YXRpdmUtc3VpdGUv/c29jaWFsLW1lZGlh/L29uLWJyYW5kLndl/YnA",
+                      "https://picsum.photos/500",
                       "Hello PCPS news channel happy dashain ggshfg",
                       "BBC News",
                       "02, Feb, 2026"
-                  ),verticallistcard(
+                  ),verticalListCard(
                       size,
-                      "https://imgs.search.brave.com/GO8ZB_gMZoE28uWTwsOjitIQ-cvL5jrv1h_8nqpyG_g/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4t/ZnJvbnQuZnJlZXBp/ay5jb20vaG9tZS9h/bm9uLXJ2bXAvY3Jl/YXRpdmUtc3VpdGUv/c29jaWFsLW1lZGlh/L29uLWJyYW5kLndl/YnA",
+                      "https://picsum.photos/500",
                       "Hello PCPS news channel happy dashain ggshfg",
                       "BBC News",
                       "02, Feb, 2026"
                   ),
-
-
-
-
-
                 ],
               ),
             ),
@@ -257,5 +238,3 @@ class _DashboardState extends State<Dashboard> {
     );
   }
 }
-
-
