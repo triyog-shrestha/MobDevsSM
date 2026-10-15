@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../controller/apiCall.dart';
 import 'detail.dart';
 
 class Dashboard extends StatefulWidget {
@@ -167,6 +168,13 @@ class DashboardState extends State<Dashboard> {
         ),
       ],
     );
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    ApiCall.getNewsData();
   }
 
   @override
